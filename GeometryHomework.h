@@ -31,12 +31,15 @@ struct Square : public Shape
   void xls( ostream& ) const; // Accessor to output to xls file
 }; // end struct Square
 
-struct Rectangle : public Shape
+namespace comsc
 {
-  Rectangle( const char* const t[] ) : Shape( t ) {}; // Constructor to initialize
-  void output( ostream& ) const; // Accessor to output to console
-  void xls( ostream& ) const; // Accessor to output to xls
-}; // end struct Rectangle
+  struct Rectangle : public Shape
+  {
+    Rectangle( const char* const t[] ) : Shape( t ) {}; // Constructor to initialize
+    void output( ostream& ) const; // Accessor to output to console
+    void xls( ostream& ) const; // Accessor to output to xls
+  }; // end struct Rectangle
+}
 
 struct Circle : public Shape
 {
@@ -52,12 +55,13 @@ struct Cube : public Square
   void xls( ostream& ) const; // Accessor to output to xls
 }; // end struct Cube
 
-struct Prism : public Rectangle
+struct Prism : public comsc::Rectangle
 {
   Prism( const char* const t[] ) : Rectangle ( t ) {}; // Constructor to initialize
   void output( ostream& ) const; // Accessor to output to console
   void xls( ostream& ) const; // Accessor to output to xls
 }; // end struct Prism
+
 
 struct Cylinder : public Circle
 {
@@ -74,5 +78,7 @@ ostream& set( ostream& );
 ostream& operator<< ( ostream&, const Shape* );
 
 #endif
+
+
 
 

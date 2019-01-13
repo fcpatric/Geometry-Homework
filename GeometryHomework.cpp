@@ -1,4 +1,4 @@
-// Lab 12, The "Geometry Homework" Program
+// Lab 13, The "Geometry Homework" Program
 // Programmer: Fernando Ian Patricio
 // Editor(s) used: Code:Blocks
 // Compiler(s) used: GNU GCC Compiler
@@ -18,10 +18,10 @@ const double PI = 3.14159; // global constant
 void Square::output( ostream& out ) const
 {
   out << reset;
-  out << "SQUARE side=" << x;
+  out << "SQUARE\r\nSide=" << x;
   out << set;
-  out << " area=" << x * x;
-  out << " perimeter=" << 4 * x;
+  out << "\r\nArea=" << x * x;
+  out << "\r\nPerimeter=" << 4 * x;
 } // end function Square::output
 
 // Print Square data to xls file
@@ -34,17 +34,17 @@ void Square::xls( ostream& out ) const
 } // end function Square::xls
 
 // Print Rectangle data to console
-void Rectangle::output( ostream& out ) const
+void comsc::Rectangle::output( ostream& out ) const
 {
   out << reset;
-  out << "RECTANGLE length=" << x << " width=" << y;
+  out << "RECTANGLE\r\nLength=" << x << " Width=" << y;
   out << set;
-  out << " area=" << x * y;
-  out << " perimeter=" << (2 * y) + (2 * x);
+  out << "\r\nArea=" << x * y;
+  out << "\r\nPerimeter=" << (2 * y) + (2 * x);
 } // end function Rectangle::output
 
 // Print Rectangle data to xls file
-void Rectangle::xls( ostream& out ) const
+void comsc::Rectangle::xls( ostream& out ) const
 {
   out << reset;
   out << "RECTANGLE" << "\t\t\t" << x << "\t" << y << "\t\t";
@@ -56,10 +56,10 @@ void Rectangle::xls( ostream& out ) const
 void Circle::output( ostream& out ) const
 {
   out << reset;
-  out << "CIRCLE radius=" << x;
+  out << "CIRCLE\r\nRadius=" << x;
   out << set;
-  out << " area=" << PI * x * x;
-  out << " perimeter=" << 2 * PI * x;
+  out << "\r\nArea=" << PI * x * x;
+  out << "\r\nPerimeter=" << 2 * PI * x;
 } // end function Circle::output
 
 // Print Circle data to xls file
@@ -75,10 +75,10 @@ void Circle::xls( ostream& out ) const
 void Cube::output( ostream& out ) const
 {
   out << reset;
-  out << "CUBE side=" << x;
+  out << "CUBE\r\nSide=" << x;
   out << set;
-  out << " surface area=" << 6 * x * x;
-  out << " volume=" << x * x * x;
+  out << "\r\nSurface Area=" << 6 * x * x;
+  out << "\r\nVolume=" << x * x * x;
 } // end function Cube::output
 
 // Print Cube data to xls file
@@ -94,10 +94,10 @@ void Cube::xls( ostream& out ) const
 void Prism::output( ostream& out ) const
 {
   out << reset;
-  out << "PRISM length=" << x << " width=" << y << " height=" << z;
+  out << "PRISM\r\nLength=" << x << " Width=" << y << " Height=" << z;
   out << set;
-  out << " surface area=" << 2 * ((y * x) + (z * x) + (z * y));
-  out << " volume=" << x * y * z;
+  out << "\r\nSurface Area=" << 2 * ((y * x) + (z * x) + (z * y));
+  out << "\r\nVolume=" << x * y * z;
 } // end function Prism::output
 
 // Print Prism data to xls file
@@ -113,10 +113,10 @@ void Prism::xls( ostream& out ) const
 void Cylinder::output( ostream& out ) const
 {
   out << reset;
-  out << "CYLINDER radius=" << x << " height=" << y;
+  out << "CYLINDER\r\nRadius=" << x << " Height=" << y;
   out << set;
-  out << " surface area=" << (2 * PI * x * y) + (2 * PI * x * x);
-  out << " volume=" << PI * x * x * y;
+  out << "\r\nSurface Area=" << (2 * PI * x * y) + (2 * PI * x * x);
+  out << "\r\nVolume=" << PI * x * x * y;
 } // end Cylinder::output
 
 // Print Cylinder data to xls file
@@ -150,4 +150,6 @@ ostream& operator<< ( ostream& out, const Shape* s )
   s->output(out);
   return out;
 }  // end overloaded operator <<
+
+
 
